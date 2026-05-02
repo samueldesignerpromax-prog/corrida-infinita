@@ -695,4 +695,19 @@ function init() {
     frame = 0;
     lastObstacleFrame = 0;
     
-    scoreElement.textContent =
+    scoreElement.textContent = '0';
+    speedElement.textContent = '3';
+    gameOverlay.classList.add('hidden');
+    floatingRestart.classList.add('hidden');
+    
+    gameLoop();
+}
+
+init();
+
+// Prevenir scroll com setas
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+    }
+});

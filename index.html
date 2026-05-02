@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Endless Runner - Corrida Infinita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <!-- Interface do jogo -->
+        <div class="game-ui">
+            <div class="score-container">
+                <div class="score-label">PONTUAÇÃO</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="highscore-container">
+                <div class="highscore-label">RECORDE</div>
+                <div class="highscore-value" id="highScore">0</div>
+            </div>
+            <div class="speed-container">
+                <div class="speed-label">VELOCIDADE</div>
+                <div class="speed-value" id="speed">1</div>
+            </div>
+        </div>
+        
+        <!-- Instruções Desktop -->
+        <div class="instructions desktop-only">
+            <span>← →</span> Mover • <span>↑</span> Pular • <span>↓</span> Deslizar
+        </div>
+        
+        <!-- Instruções Mobile -->
+        <div class="instructions mobile-only">
+            Deslize para mover, pular e deslizar!
+        </div>
+        
+        <!-- Game Over Overlay -->
+        <div id="gameOverlay" class="game-overlay hidden">
+            <div class="game-over-card">
+                <h2>🏁 GAME OVER 🏁</h2>
+                <div class="final-stats">
+                    <p>Sua pontuação: <span id="finalScore">0</span></p>
+                    <p>Distância percorrida: <span id="finalDistance">0</span>m</p>
+                </div>
+                <button id="restartButton" class="restart-btn">
+                    🔄 JOGAR NOVAMENTE
+                </button>
+            </div>
+        </div>
+        
+        <!-- Botão de restart flutuante (opcional) -->
+        <button id="floatingRestart" class="floating-restart hidden">🔄</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
